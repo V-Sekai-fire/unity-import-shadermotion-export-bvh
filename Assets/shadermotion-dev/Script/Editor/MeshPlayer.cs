@@ -106,11 +106,11 @@ struct MeshPlayerGen {
 				bw.boneIndex0+Mathf.Clamp01(bw.weight0)/2, bw.boneIndex1+Mathf.Clamp01(bw.weight1)/2,
 				bw.boneIndex2+Mathf.Clamp01(bw.weight2)/2, bw.boneIndex3+Mathf.Clamp01(bw.weight3)/2)));
 		}
-		shapeTex.Resize(256, colors.Count/256, TextureFormat.RGBAFloat, false);
+		shapeTex.Reinitialize(256, colors.Count/256, TextureFormat.RGBAFloat, false);
 		shapeTex.SetPixels(colors.ToArray());
 		shapeTex.Apply(false, false);
 		CreateBoneTex(colors, bindposes);
-		boneTex.Resize(colors.Count/skel.bones.Length, skel.bones.Length, TextureFormat.RGBAFloat, false);
+		boneTex.Reinitialize(colors.Count/skel.bones.Length, skel.bones.Length, TextureFormat.RGBAFloat, false);
 		boneTex.SetPixels(colors.ToArray());
 		boneTex.Apply(false, false);
 
